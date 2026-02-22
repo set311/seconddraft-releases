@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Build temp directory (created and cleaned by release.sh)
+build-temp/
+
+# DMG files (uploaded to GitHub Releases, not committed to repo)
+*.dmg
+
+# Xcode
+*.xcodeproj
+DerivedData/
