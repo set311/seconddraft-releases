@@ -5,18 +5,17 @@
         <link>https://set311.github.io/seconddraft-releases/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.1</title>
-            <pubDate>Sun, 22 Feb 2026 21:47:39 +0000</pubDate>
-            <sparkle:version>2</sparkle:version>
-            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+            <title>Version 1.2</title>
+            <pubDate>Sun, 22 Feb 2026 22:34:07 +0000</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.1</h2>
-                <p>See release notes on GitHub for details.</p>
+                <h2>What's New in 1.2</h2><ul><li>Version 1.2</li><li>Adding auto-update capability</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.1/SecondDraft-1.1.dmg"
-                sparkle:edSignature="KNljsqMqGQ8xvfEvssHl0FM7vd9fNCIKZ5ydkk6TXB1iuCYk6XypP76aa2VVUUKCxnS4cSAd+Qh3qgJhBFSrAA=="
-                length="2038608"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.2/SecondDraft-1.2.dmg"
+                sparkle:edSignature="YeE+ra+H6UvghMO70sgCLAdvqnGkGBHzqPmsnH5pDcKU+UkF3OSerWVzUXLbrDFLVWt2fV7nyqJA+/ApRa5mAw=="
+                length="2034293"
                 type="application/octet-stream"/>
         </item>
     </channel>
