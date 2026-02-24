@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Second Draft Updates</title>
-        <link>https://set311.github.io/seconddraft-releases/appcast.xml</link>
+        <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.2</title>
-            <pubDate>Sun, 22 Feb 2026 22:34:07 +0000</pubDate>
+            <title>Version 1.3</title>
+            <pubDate>Tue, 24 Feb 2026 05:46:38 +0000</pubDate>
             <sparkle:version>3</sparkle:version>
-            <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
+            <sparkle:shortVersionString>1.3</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.2</h2><ul><li>Version 1.2</li><li>Adding auto-update capability</li></ul>
+                <h2>What's New in 1.3</h2><ul><li>Version 1.3</li><li>Adding MacOS Mission Control Support </li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.2/SecondDraft-1.2.dmg"
-                sparkle:edSignature="YeE+ra+H6UvghMO70sgCLAdvqnGkGBHzqPmsnH5pDcKU+UkF3OSerWVzUXLbrDFLVWt2fV7nyqJA+/ApRa5mAw=="
-                length="2034293"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.3/SecondDraft-1.3.dmg"
+                sparkle:edSignature="wrv8TlgU0eryr3tT824SVqbLl7jJ5o1NG4Brml1GIjmsNU699bASafyoyaLmon9Fsow2/RdNsj4F5y8gKJXkBA=="
+                length="2225560"
                 type="application/octet-stream"/>
         </item>
     </channel>
