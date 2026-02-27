@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.3</title>
-            <pubDate>Tue, 24 Feb 2026 05:46:38 +0000</pubDate>
-            <sparkle:version>3</sparkle:version>
-            <sparkle:shortVersionString>1.3</sparkle:shortVersionString>
+            <title>Version 1.4</title>
+            <pubDate>Fri, 27 Feb 2026 21:23:46 +0000</pubDate>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.3</h2><ul><li>Version 1.3</li><li>Adding MacOS Mission Control Support </li></ul>
+                <h2>What's New in 1.4</h2><ul><li>Version 1.4</li><li>Bug Fixes</li><li>New DMG image  </li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.3/SecondDraft-1.3.dmg"
-                sparkle:edSignature="wrv8TlgU0eryr3tT824SVqbLl7jJ5o1NG4Brml1GIjmsNU699bASafyoyaLmon9Fsow2/RdNsj4F5y8gKJXkBA=="
-                length="2225560"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.4/SecondDraft-1.4.dmg"
+                sparkle:edSignature="dtHas6idUI9vgrOWAVIjV9dwWFGY5G7GcEHwOhww2jdsAQfyxSOUv1aRWku3Ob0swKWSHeK7alHFWIR2KnSeDQ=="
+                length="2330844"
                 type="application/octet-stream"/>
         </item>
     </channel>
