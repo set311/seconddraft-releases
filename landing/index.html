@@ -408,13 +408,29 @@
       letter-spacing: -0.5px;
     }
 
+    .problem {
+      isolation: isolate;
+    }
+
     .problem p em {
       color: var(--text-primary);
       font-style: normal;
-      text-decoration: underline;
-      text-decoration-color: #D1D1D1;
-      text-underline-offset: 6px;
-      text-decoration-thickness: 2px;
+      position: relative;
+      display: inline;
+      padding: 0 4px;
+    }
+
+    .problem p em::before {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: -2px;
+      right: -2px;
+      height: 38%;
+      background: rgba(255, 220, 40, 0.4);
+      z-index: -1;
+      border-radius: 2px;
+      transform: skewX(-1.5deg);
     }
 
     /* ======================== */
@@ -446,126 +462,154 @@
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      gap: 24px;
     }
 
     .step {
       position: relative;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* Visual illustration area */
+    .step-visual {
+      height: 200px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-body {
+      padding: 24px;
     }
 
     .step-number {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
       background: var(--accent);
       color: white;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .step h3 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .step p {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
     }
 
-    .step-icons {
+    /* Step 1: Text lines with selection */
+    .select-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 65%;
+    }
+    .select-line {
+      height: 8px;
+      border-radius: 4px;
+      background: #E0E0E0;
+    }
+    .select-line:nth-child(1) { width: 90%; }
+    .select-line:nth-child(2) { width: 100%; }
+    .select-line:nth-child(3) { width: 75%; }
+    .select-line:nth-child(4) { width: 85%; }
+    .select-line.selected {
+      background: linear-gradient(90deg, #E0E0E0 0%, #E0E0E0 15%, #3B82F6 15%, #3B82F6 85%, #E0E0E0 85%);
+      animation: selectionPulse 2s ease-in-out infinite;
+    }
+    @keyframes selectionPulse {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+
+    /* Step 2: Key caps that press */
+    .keys-visual {
       display: flex;
       gap: 10px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-
-    .step-icon-badge {
-      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-secondary);
     }
-
-    .step-icon-badge svg {
-      width: 16px;
-      height: 16px;
-      opacity: 0.7;
-    }
-
-    .shortcut-keys {
+    .key-vis {
       display: flex;
-      gap: 8px;
-      align-items: center;
-      margin-top: 16px;
-    }
-
-    .key-cap {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: white;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 16px;
-      font-weight: 600;
+      background: #fff;
+      border: 2px solid #D0D0D0;
+      border-radius: 10px;
+      font-weight: 700;
       color: var(--text-primary);
-      box-shadow: 0 2px 0 var(--border);
-      min-width: 48px;
+      box-shadow: 0 4px 0 #C0C0C0;
+      animation: keyPress 2.5s ease-in-out infinite;
     }
-
-    .key-plus {
-      font-size: 16px;
+    .key-vis-opt { width: 56px; height: 56px; font-size: 22px; }
+    .key-vis-space { width: 110px; height: 56px; font-size: 14px; letter-spacing: 1px; animation-delay: 0.05s; }
+    .key-vis-plus {
+      font-size: 18px;
       color: var(--text-muted);
       font-weight: 500;
     }
-
-    .step-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+    @keyframes keyPress {
+      0%, 40%, 100% { transform: translateY(0); box-shadow: 0 4px 0 #C0C0C0; }
+      50%, 60%      { transform: translateY(3px); box-shadow: 0 1px 0 #C0C0C0; }
     }
 
-    .step-tag {
-      background: #F0F0F0;
-      color: #333333;
+    /* Step 3: Stacked suggestion cards */
+    .suggest-cards {
+      position: relative;
+      width: 150px;
+      height: 130px;
+    }
+    .suggest-card {
+      position: absolute;
+      width: 140px;
+      height: 46px;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
       font-size: 12px;
       font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 6px;
+      color: var(--text-secondary);
+      animation: cardCascade 0.6s ease-out both;
     }
-
-    /* Connector lines between steps */
-    .steps-grid .step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 24px;
-      right: -24px;
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(to right, var(--border), transparent);
-      display: none;
+    .suggest-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
-
-    @media (min-width: 769px) {
-      .steps-grid .step:not(:last-child)::after {
-        display: block;
-      }
+    .suggest-card:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+    .suggest-card:nth-child(1) .suggest-dot { background: #4CAF50; }
+    .suggest-card:nth-child(2) { top: 26px; left: 6px; animation-delay: 0.12s; }
+    .suggest-card:nth-child(2) .suggest-dot { background: #2196F3; }
+    .suggest-card:nth-child(3) { top: 52px; left: 3px; animation-delay: 0.24s; }
+    .suggest-card:nth-child(3) .suggest-dot { background: #FF9800; }
+    .suggest-card:nth-child(4) { top: 78px; left: 8px; animation-delay: 0.36s; }
+    .suggest-card:nth-child(4) .suggest-dot { background: #9C27B0; }
+    @keyframes cardCascade {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ======================== */
@@ -574,11 +618,28 @@
     .features {
       padding: var(--section-pad) 40px;
       background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dot grid texture on features section (Moleskine continuity) */
+    .features::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.10) 1px, transparent 1px);
+      background-size: 20px 20px;
+      mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 0%, transparent 100%);
     }
 
     .features-inner {
       max-width: var(--max-width);
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .feature-row {
@@ -641,11 +702,24 @@
     }
 
     .feature-card {
-      background: white;
+      background: #FFFDF8;
       border-radius: 16px;
-      padding: 32px;
+      padding: 32px 32px 32px 40px;
       box-shadow: 0 4px 24px rgba(28, 25, 23, 0.06);
       border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Notebook margin line */
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 28px;
+      width: 1.5px;
+      background: rgba(220, 100, 100, 0.18);
     }
 
     /* Feature 1: Context-aware configs mockup */
@@ -663,6 +737,14 @@
       border-radius: 10px;
       background: var(--bg);
       border: 1px solid var(--border);
+      animation: configSlideIn 0.5s ease-out both;
+    }
+    .config-row:nth-child(1) { animation-delay: 0.1s; }
+    .config-row:nth-child(2) { animation-delay: 0.25s; }
+    .config-row:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes configSlideIn {
+      from { opacity: 0; transform: translateX(16px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
 
     .config-app-icon {
@@ -771,8 +853,40 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
       margin-bottom: 4px;
+      position: relative;
+    }
+
+    /* CSS shield/lock icon */
+    .privacy-lock-icon {
+      width: 22px;
+      height: 26px;
+      border: 2.5px solid var(--text-primary);
+      border-radius: 4px 4px 6px 6px;
+      position: relative;
+    }
+    .privacy-lock-icon::before {
+      content: '';
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 12px;
+      border: 2.5px solid var(--text-primary);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+    .privacy-lock-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px;
+      height: 4px;
+      background: var(--text-primary);
+      border-radius: 50%;
     }
 
     .privacy-providers {
@@ -1004,7 +1118,7 @@
 
       .steps-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
       }
 
       .section-title {
@@ -1132,6 +1246,7 @@
       overflow: hidden;
       pointer-events: none;
       z-index: 0;
+      display: none; /* V2: hidden in favor of radiating lines */
     }
 
     .rain-col {
@@ -1167,7 +1282,38 @@
         transform: translateY(100%);
       }
     }
-  </style>
+
+    /* ======================== */
+    /* DOT GRID BACKGROUND (V2) */
+    /* ======================== */
+
+    /* Clip hero so dots don't bleed into section 2 */
+    .hero {
+      overflow: hidden;
+    }
+
+    .hero-dot-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.15) 1.2px, transparent 1.2px);
+      background-size: 20px 20px;
+      /* Fade from center-right (where screenshot is) outward */
+      mask-image: radial-gradient(ellipse 80% 80% at 55% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 55% 50%, black 0%, transparent 100%);
+    }
+
+    /* Hide on mobile */
+    @media (max-width: 768px) {
+      .hero-dot-grid {
+        display: none;
+      }
+    }
+      </style>
 </head>
 
 <body>
@@ -1195,7 +1341,9 @@
   <!-- SECTION 1: HERO        -->
   <!-- ==================== -->
   <section class="hero">
-    <!-- Word Rain animated background -->
+    <!-- Dot Grid background (V2) -->
+    <div class="hero-dot-grid"></div>
+    <!-- Word Rain animated background (V1 — hidden) -->
     <div class="rain-bg" id="rainBg"></div>
 
     <div class="hero-content">
@@ -1255,67 +1403,51 @@
     <div class="section-label reveal">How it works</div>
     <h2 class="section-title reveal">Three steps. One shortcut.</h2>
     <div class="steps-grid">
+      <!-- Step 1 -->
       <div class="step reveal">
-        <div class="step-number">1</div>
-        <h3>Select any text</h3>
-        <p>In any app — emails, messages, documents, Slack, anywhere on macOS.</p>
-        <div class="step-icons">
-          <div class="step-icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            Mail
-          </div>
-          <div class="step-icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M15 10v5" />
-              <path d="M9 10v5" />
-              <path d="m20 10-1.5 5" />
-              <path d="m4 10 1.5 5" />
-              <path d="M7.5 5.5V2" />
-              <path d="M16.5 5.5V2" />
-              <rect x="2" y="5" width="20" height="14" rx="2" />
-            </svg>
-            Slack
-          </div>
-          <div class="step-icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M2 12h20" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-            Gmail
-          </div>
-          <div class="step-icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect width="4" height="12" x="2" y="9" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-            LinkedIn
+        <div class="step-visual">
+          <div class="select-lines">
+            <div class="select-line"></div>
+            <div class="select-line selected"></div>
+            <div class="select-line selected"></div>
+            <div class="select-line"></div>
           </div>
         </div>
+        <div class="step-body">
+          <div class="step-number">1</div>
+          <h3>Select any text</h3>
+          <p>In any app — emails, messages, documents, Slack, anywhere on macOS.</p>
+        </div>
       </div>
+      <!-- Step 2 -->
       <div class="step reveal" style="transition-delay: 0.1s;">
-        <div class="step-number">2</div>
-        <h3>Press ⌥ + Space</h3>
-        <p>One keyboard shortcut. That's it. Customize it to whatever you prefer.</p>
-        <div class="shortcut-keys">
-          <div class="key-cap">⌥</div>
-          <span class="key-plus">+</span>
-          <div class="key-cap">Space</div>
+        <div class="step-visual">
+          <div class="keys-visual">
+            <div class="key-vis key-vis-opt">⌥</div>
+            <span class="key-vis-plus">+</span>
+            <div class="key-vis key-vis-space">Space</div>
+          </div>
+        </div>
+        <div class="step-body">
+          <div class="step-number">2</div>
+          <h3>Press ⌥ + Space</h3>
+          <p>One keyboard shortcut. That's it. Customize it to whatever you prefer.</p>
         </div>
       </div>
+      <!-- Step 3 -->
       <div class="step reveal" style="transition-delay: 0.2s;">
-        <div class="step-number">3</div>
-        <h3>Get 4 AI rewrites</h3>
-        <p>Grammar, Clarity, Tone, and Structure — all at once, instantly.</p>
-        <div class="step-tags">
-          <span class="step-tag">Grammar</span>
-          <span class="step-tag">Clarity</span>
-          <span class="step-tag">Tone</span>
-          <span class="step-tag">Structure</span>
+        <div class="step-visual">
+          <div class="suggest-cards">
+            <div class="suggest-card"><div class="suggest-dot"></div>Grammar</div>
+            <div class="suggest-card"><div class="suggest-dot"></div>Clarity</div>
+            <div class="suggest-card"><div class="suggest-dot"></div>Tone</div>
+            <div class="suggest-card"><div class="suggest-dot"></div>Structure</div>
+          </div>
+        </div>
+        <div class="step-body">
+          <div class="step-number">3</div>
+          <h3>Get 4 AI rewrites</h3>
+          <p>Grammar, Clarity, Tone, and Structure — all at once, instantly.</p>
         </div>
       </div>
     </div>
@@ -1397,7 +1529,7 @@
         <div class="feature-visual">
           <div class="feature-card">
             <div class="privacy-mockup">
-              <div class="privacy-lock">🔐</div>
+              <div class="privacy-lock"><div class="privacy-lock-icon"></div></div>
               <div class="privacy-providers">
                 <div class="provider-chip">
                   <div class="provider-dot anthropic"></div>
