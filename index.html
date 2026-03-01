@@ -629,10 +629,11 @@
       top: 0; left: 0; right: 0; bottom: 0;
       pointer-events: none;
       z-index: 0;
-      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.10) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.18) 1.2px, transparent 1.2px);
       background-size: 20px 20px;
-      mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 0%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 0%, transparent 100%);
+      /* Dots visible at edges, fading in center content area */
+      mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, transparent 30%, black 100%);
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, transparent 30%, black 100%);
     }
 
     .features-inner {
@@ -1225,6 +1226,91 @@
     }
 
     /* ======================== */
+    /* VIDEO SECTION             */
+    /* ======================== */
+    .video-wrapper {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 720px;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* Sound toggle button */
+    .video-sound-toggle {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      z-index: 5;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .video-sound-toggle:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.08);
+    }
+    .video-sound-toggle svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+    /* Hide unmute icon when unmuted, and vice versa */
+    .video-sound-toggle .icon-unmute { display: block; }
+    .video-sound-toggle .icon-mute { display: none; }
+    .video-sound-toggle.is-unmuted .icon-unmute { display: none; }
+    .video-sound-toggle.is-unmuted .icon-mute { display: block; }
+
+    .video-section {
+      position: relative;
+      padding: 60px 40px 100px;
+      text-align: center;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    /* Dot grid background (matches hero + features) */
+    .video-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.35) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
+      mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+    .video-section .video-wrapper {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      box-shadow:
+        0 12px 48px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        max-width: 100%;
+        border-radius: 12px;
+      }
+    }
+
+    /* ======================== */
     /* WORD RAIN BACKGROUND      */
     /* ======================== */
     .hero {
@@ -1300,11 +1386,11 @@
       bottom: 0;
       pointer-events: none;
       z-index: 0;
-      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.15) 1.2px, transparent 1.2px);
+      background-image: radial-gradient(circle, rgba(10, 10, 10, 0.35) 1.5px, transparent 1.5px);
       background-size: 20px 20px;
-      /* Fade from center-right (where screenshot is) outward */
-      mask-image: radial-gradient(ellipse 80% 80% at 55% 50%, black 0%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 55% 50%, black 0%, transparent 100%);
+      /* Fade from right side (screenshot area) — keep text area clear */
+      mask-image: radial-gradient(ellipse 60% 80% at 75% 50%, black 10%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 80% at 75% 50%, black 10%, transparent 100%);
     }
 
     /* Hide on mobile */
@@ -1367,8 +1453,7 @@
       </p>
     </div>
     <div class="hero-visual animate-up delay-2">
-      <div class="hero-visual-inner">
-        <!-- Placeholder: Replace with actual product screenshot -->
+<div class="hero-visual-inner">
         <div class="hero-carousel" id="heroCarousel">
           <div class="carousel-track">
             <img class="carousel-slide active"
@@ -1395,6 +1480,27 @@
       <p>What if every message landed<br><em>exactly the way you meant it?</em></p>
     </div>
   </section>
+
+  <!-- POSITION B: Video between Bridge and How It Works -->
+  <div class="video-section">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="SecondDraft.mp4" type="video/mp4">
+      </video>
+      <button class="video-sound-toggle" aria-label="Toggle sound" onclick="toggleVideoSound(this)">
+        <!-- Muted icon (speaker with X) -->
+        <svg class="icon-unmute" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" opacity="0.3"/>
+          <line x1="22" y1="4" x2="16" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="4" x2="22" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <!-- Unmuted icon (speaker with waves) -->
+        <svg class="icon-mute" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <!-- ==================== -->
   <!-- SECTION 3: HOW IT WORKS -->
@@ -1558,7 +1664,7 @@
   <section class="final-cta" id="download">
     <div class="final-cta-inner reveal">
       <h2>Your second draft is one shortcut away.</h2>
-      <a href="#" class="btn-primary">
+      <a href="https://github.com/set311/seconddraft-releases/releases/download/v1.4/SecondDraft-1.4.dmg" class="btn-primary">
         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
           <path
             d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
@@ -1569,6 +1675,7 @@
         Free<span style="margin: 0 6px;">·</span>macOS 14+<span style="margin: 0 6px;">·</span>No account needed<span
           style="margin: 0 6px;">·</span>Bring your own AI key (OpenAI, Claude, or Gemini)
       </p>
+
     </div>
   </section>
 
@@ -1705,6 +1812,20 @@
     }
   </script>
 
+<script>
+    function toggleVideoSound(btn) {
+      const video = btn.parentElement.querySelector('video');
+      if (video.muted) {
+        video.muted = false;
+        btn.classList.add('is-unmuted');
+        btn.setAttribute('aria-label', 'Mute sound');
+      } else {
+        video.muted = true;
+        btn.classList.remove('is-unmuted');
+        btn.setAttribute('aria-label', 'Unmute sound');
+      }
+    }
+  </script>
 </body>
 
 </html>
