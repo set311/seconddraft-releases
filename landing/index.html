@@ -15,7 +15,7 @@
   <!-- Open Graph (Facebook, LinkedIn, Slack, iMessage) -->
   <meta property="og:title" content="Second Draft — AI Writing Assistant for macOS">
   <meta property="og:description"
-    content="Select your text. Press one shortcut. Get AI rewrites for grammar, clarity, tone, and structure. Done.">
+    content="Meet the AI writing partner that sharpens your words without changing your voice.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://seconddraft.fyi/">
   <meta property="og:site_name" content="Second Draft">
@@ -29,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Second Draft — AI Writing Assistant for macOS">
   <meta name="twitter:description"
-    content="Select your text. Press one shortcut. Get AI rewrites for grammar, clarity, tone, and structure. Done.">
+    content="Meet the AI writing partner that sharpens your words without changing your voice.">
   <!-- TODO: Replace with actual 1200x630 social preview image -->
   <meta name="twitter:image" content="https://seconddraft.fyi/og-image.png">
   <meta name="twitter:image:alt" content="Second Draft — AI-powered writing assistant for macOS">
@@ -491,7 +491,7 @@
     .step-number {
       width: 36px;
       height: 36px;
-      border-radius: 11px;
+      border-radius: 50%;
       background: var(--accent);
       color: white;
       font-size: 16px;
@@ -500,6 +500,12 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 14px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .step-number:hover {
+      background: #3B82F6;
+      transform: scale(1.1);
     }
 
     .step h3 {
@@ -1434,11 +1440,11 @@
 
     <div class="hero-content">
       <h1 class="animate-up">
-        Stop second-guessing
+        Stop overthinking
         <span class="animate-up delay-1">every message.</span>
       </h1>
       <p class="hero-sub animate-up delay-2">
-        Select your text. Press one shortcut. Get AI rewrites for grammar, clarity, tone, and structure. Done.
+        Meet the AI writing partner that sharpens your words without changing your voice
       </p>
       <a href="#download" class="btn-primary animate-up delay-3">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1507,7 +1513,7 @@
   <!-- ==================== -->
   <section class="how-it-works" id="how-it-works">
     <div class="section-label reveal">How it works</div>
-    <h2 class="section-title reveal">Three steps. One shortcut.</h2>
+    <h2 class="section-title reveal">It's as simple as it sounds.</h2>
     <div class="steps-grid">
       <!-- Step 1 -->
       <div class="step reveal">
