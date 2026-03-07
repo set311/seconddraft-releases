@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.4</title>
-            <pubDate>Fri, 27 Feb 2026 21:23:46 +0000</pubDate>
-            <sparkle:version>5</sparkle:version>
-            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
+            <title>Version 1.5</title>
+            <pubDate>Sat, 07 Mar 2026 04:42:13 +0000</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.5</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.4</h2><ul><li>Version 1.4</li><li>Bug Fixes</li><li>New DMG image  </li></ul>
+                <h2>What's New in 1.5</h2><ul><li>Version 1.5</li><li>Adding Feedback Form on the Menu Bar</li><li>Adding AI Provider Dropdown box on the Principal Window, Now you can choose between OpenAI and Gemini on the same session</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.4/SecondDraft-1.4.dmg"
-                sparkle:edSignature="dtHas6idUI9vgrOWAVIjV9dwWFGY5G7GcEHwOhww2jdsAQfyxSOUv1aRWku3Ob0swKWSHeK7alHFWIR2KnSeDQ=="
-                length="2330844"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.5/SecondDraft-1.5.dmg"
+                sparkle:edSignature="EDQ8yF+XaRcPyBpS96G7ySdVyYX9/w19flTNt3eMkfQS9slLfGYqp48eQZjVqKje/Zy8xz1DKZTttNwmW07aDQ=="
+                length="2416931"
                 type="application/octet-stream"/>
         </item>
     </channel>
