@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.5</title>
-            <pubDate>Sat, 07 Mar 2026 04:42:13 +0000</pubDate>
+            <title>Version 1.6</title>
+            <pubDate>Sun, 08 Mar 2026 23:54:56 +0000</pubDate>
             <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>1.5</sparkle:shortVersionString>
+            <sparkle:shortVersionString>1.6</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.5</h2><ul><li>Version 1.5</li><li>Adding Feedback Form on the Menu Bar</li><li>Adding AI Provider Dropdown box on the Principal Window, Now you can choose between OpenAI and Gemini on the same session</li></ul>
+                <h2>What's New in 1.6</h2><ul><li>Version 1.6</li><li>With Apple Intelligence support, you can now use Second Draft with Apple models directly on your device. No need for an API key, and you don't need an internet connection. It's designed to be privacy-focused and work locally</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.5/SecondDraft-1.5.dmg"
-                sparkle:edSignature="EDQ8yF+XaRcPyBpS96G7ySdVyYX9/w19flTNt3eMkfQS9slLfGYqp48eQZjVqKje/Zy8xz1DKZTttNwmW07aDQ=="
-                length="2416931"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.6/SecondDraft-1.6.dmg"
+                sparkle:edSignature="jViQhEW/Eay1zcfLXg8Yppc5bnQIjT2xchaJVUqhrJ6wXD7ERE1GyJE2vaXLFuL6tk0Ib5rNqkIWsi941K5EDA=="
+                length="2497408"
                 type="application/octet-stream"/>
         </item>
     </channel>
