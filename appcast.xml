@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.7</title>
-            <pubDate>Tue, 10 Mar 2026 06:29:57 +0000</pubDate>
-            <sparkle:version>8</sparkle:version>
-            <sparkle:shortVersionString>1.7</sparkle:shortVersionString>
+            <title>Version 1.8</title>
+            <pubDate>Wed, 11 Mar 2026 02:15:45 +0000</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>1.8</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.7</h2><ul><li>Version 1.7</li><li>You can now get suggestions as they stream in</li><li>Made the interface faster by cutting down loading time</li></ul>
+                <h2>What's New in 1.8</h2><ul><li># Version 1.8</li><li>Bug fixes and performance improvements</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.7/SecondDraft-1.7.dmg"
-                sparkle:edSignature="6elt/mf8xrMgp5SIr/QqttQbyMuZjtDBGxFjCDO7LgSG1tUZzBdffc2mSpuOU3aQeGB1LnEGg0uSiBZKlJWjAw=="
-                length="2610880"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.8/SecondDraft-1.8.dmg"
+                sparkle:edSignature="mmOgCUX5rovZhWNBL0ytAStQKvCM8wIVi8pgYCj3KfqUMB28e67ssrAn1aoB3yL863otDeZf2mPy7Igt/j7iAA=="
+                length="2584862"
                 type="application/octet-stream"/>
         </item>
     </channel>
