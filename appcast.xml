@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.8</title>
-            <pubDate>Wed, 11 Mar 2026 02:15:45 +0000</pubDate>
-            <sparkle:version>9</sparkle:version>
-            <sparkle:shortVersionString>1.8</sparkle:shortVersionString>
+            <title>Version 1.9</title>
+            <pubDate>Thu, 19 Mar 2026 18:28:27 +0000</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.9</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.8</h2><ul><li># Version 1.8</li><li>Bug fixes and performance improvements</li></ul>
+                <h2>What's New in 1.9</h2><ul><li># Version 1.9</li><li>Click anywhere on a card to copy (no more tiny button)</li><li>⌥1-4 keyboard shortcuts for instant copy</li><li>⌥Space now toggles the panel (show/hide)</li><li>Suggestions load in the background — keep working</li><li>Your session is preserved when you hide the second draft window</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.8/SecondDraft-1.8.dmg"
-                sparkle:edSignature="mmOgCUX5rovZhWNBL0ytAStQKvCM8wIVi8pgYCj3KfqUMB28e67ssrAn1aoB3yL863otDeZf2mPy7Igt/j7iAA=="
-                length="2584862"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.9/SecondDraft-1.9.dmg"
+                sparkle:edSignature="/3iAybxv9XLt1oo/0iE40V+vtarfE0JGmR2A9gx/drPicBbWt5o3UlK+Zn9IzcNc5pLmqIQp+VQe4NBZEF8SDA=="
+                length="2617784"
                 type="application/octet-stream"/>
         </item>
     </channel>
