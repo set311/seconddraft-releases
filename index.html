@@ -940,6 +940,191 @@
       max-width: 280px;
     }
 
+    /* Privacy Visual V2 (Shield Split) */
+    .privacy-mockup-v2 {
+      padding: 28px 24px;
+    }
+
+    .privacy-ondevice {
+      background: #2D2A26;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .privacy-ondevice-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .privacy-ondevice-title {
+      color: #F5F0EB;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .privacy-ondevice-sub {
+      color: rgba(245,240,235,0.5);
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .privacy-cloud {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .privacy-cloud-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .privacy-cloud-providers {
+      display: flex;
+      gap: 8px;
+    }
+
+    .privacy-cloud-chip {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ======================== */
+    /* BEHIND THE APP             */
+    /* ======================== */
+    .behind-the-app {
+      padding: var(--section-pad) 40px;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .behind-dot-grid {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(circle, rgba(10,10,10,0.18) 1.2px, transparent 1.2px);
+      background-size: 20px 20px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 10%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 10%, transparent 100%);
+    }
+
+    .behind-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .behind-card {
+      background: #FFFDF8;
+      border-radius: 16px;
+      padding: 48px 40px;
+      border: 1px solid var(--border);
+      position: relative;
+      text-align: left;
+      margin-top: 48px;
+    }
+
+    .behind-card-margin {
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 52px;
+      width: 1px;
+      background: rgba(220, 80, 80, 0.25);
+      border-radius: 1px;
+    }
+
+    .behind-card-content {
+      padding-left: 32px;
+    }
+
+    .behind-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .behind-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .behind-role {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .behind-bio {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .behind-socials {
+      display: flex;
+      gap: 24px;
+    }
+
+    .behind-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .behind-social-link:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-made {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
     /* ======================== */
     /* SECTION 5: FINAL CTA      */
     /* ======================== */
@@ -1404,6 +1589,25 @@
       .hero-dot-grid {
         display: none;
       }
+      .behind-dot-grid {
+        display: none;
+      }
+      .behind-card {
+        padding: 32px 24px;
+      }
+      .behind-card-margin {
+        left: 36px;
+      }
+      .behind-card-content {
+        padding-left: 20px;
+      }
+      .behind-socials {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .privacy-cloud-providers {
+        flex-direction: column;
+      }
     }
       </style>
 </head>
@@ -1421,6 +1625,7 @@
     <ul class="nav-links">
       <li><a href="#how-it-works">How it works</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#download" class="nav-cta">Download</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle menu"
@@ -1630,34 +1835,85 @@
       <div class="feature-row reveal">
         <div class="feature-text">
           <h3>Your keys, your data, period.</h3>
-          <p>Your text never leaves your Mac. Bring your own API key from OpenAI, Anthropic, or Google — stored in macOS
-            Keychain, not on our servers. Because we don't have servers.</p>
+          <p>Your API keys never leave your Mac, stored in macOS Keychain, not on our servers. Bring your own key from OpenAI, Anthropic, or Google. Or skip the key entirely — Apple Intelligence runs right on your device, zero data sent anywhere.</p>
           <div class="feature-badges">
             <span class="feature-badge">🔒 macOS Keychain</span>
             <span class="feature-badge">🚫 No cloud</span>
             <span class="feature-badge">🔄 Switch anytime</span>
+            <span class="feature-badge">🍎 On-device AI</span>
           </div>
         </div>
         <div class="feature-visual">
           <div class="feature-card">
-            <div class="privacy-mockup">
-              <div class="privacy-lock"><div class="privacy-lock-icon"></div></div>
-              <div class="privacy-providers">
-                <div class="provider-chip">
-                  <div class="provider-dot anthropic"></div>
-                  Claude
+            <div class="privacy-mockup-v2">
+              <!-- On-device tier: Apple Intelligence -->
+              <div class="privacy-ondevice">
+                <div class="privacy-ondevice-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                 </div>
-                <div class="provider-chip">
-                  <div class="provider-dot openai"></div>
-                  GPT
-                </div>
-                <div class="provider-chip">
-                  <div class="provider-dot google"></div>
-                  Gemini
+                <div>
+                  <div class="privacy-ondevice-title">Apple Intelligence</div>
+                  <div class="privacy-ondevice-sub">Runs on your Mac · No API key needed</div>
                 </div>
               </div>
-              <p class="privacy-note">API keys stored securely in macOS Keychain. Never leaves your device.</p>
+              <!-- Cloud tier -->
+              <div class="privacy-cloud">
+                <div class="privacy-cloud-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <span>Bring your own key</span>
+                </div>
+                <div class="privacy-cloud-providers">
+                  <div class="privacy-cloud-chip">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #D97706;"></div>
+                    Claude
+                  </div>
+                  <div class="privacy-cloud-chip">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #10B981;"></div>
+                    GPT
+                  </div>
+                  <div class="privacy-cloud-chip">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #3B82F6;"></div>
+                    Gemini
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- SECTION: BEHIND THE APP -->
+  <!-- ==================== -->
+  <section class="behind-the-app" id="about">
+    <div class="behind-dot-grid"></div>
+    <div class="behind-inner">
+      <div class="section-label reveal">Behind the app</div>
+      <h2 class="section-title reveal">Built by someone who gets it</h2>
+      <div class="behind-card reveal">
+        <div class="behind-card-margin"></div>
+        <div class="behind-card-content">
+          <img src="jesus-cagide.png" alt="Jesus Cagide" class="behind-avatar" />
+          <h3 class="behind-name">Jesus Cagide</h3>
+          <p class="behind-role">Product builder in San Francisco</p>
+          <p class="behind-bio">
+            English isn't my first language. I spent years overthinking every email, every Slack message, every LinkedIn post. So I built the tool I wished I had, something fast, private, and honest about your writing.
+          </p>
+          <div class="behind-socials">
+            <a href="https://x.com/JesusCagide" target="_blank" class="behind-social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter
+            </a>
+            <a href="https://www.linkedin.com/in/jesuscagide/" target="_blank" class="behind-social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.productandleadership.com/" target="_blank" class="behind-social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Blog
+            </a>
           </div>
         </div>
       </div>
@@ -1692,6 +1948,9 @@
     <div class="footer-left">
       <div class="nav-logo-icon">«»</div>
       © 2026 Second Draft
+    </div>
+    <div class="footer-made">
+      Made in SF with <span style="color: #e53e3e;">&#9829;</span>
     </div>
   </footer>
 
