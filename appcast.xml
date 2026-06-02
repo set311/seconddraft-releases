@@ -5,17 +5,17 @@
         <link>https://seconddraft.fyi/appcast.xml</link>
         <language>en</language>
         <item>
-            <title>Version 1.10</title>
-            <pubDate>Tue, 26 May 2026 02:11:24 +0000</pubDate>
-            <sparkle:version>11</sparkle:version>
-            <sparkle:shortVersionString>1.10</sparkle:shortVersionString>
+            <title>Version 1.11</title>
+            <pubDate>Tue, 02 Jun 2026 01:24:59 +0000</pubDate>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>1.11</sparkle:shortVersionString>
             <description><![CDATA[
-                <h2>What's New in 1.10</h2><ul><li># Version 1.10</li><li>Until now, every rewrite gave you the same four suggestions. v1.10 lets you decide.</li><li>## Make your own recipes</li><li>Pick which suggestions you want — 1 to 4, any mix. Two structure options to compare? Two different tones? Just grammar and clarity? Set it up once, and it stays.</li><li>## Switch on the fly</li><li>A new row of pills sits at the bottom of the panel. Tap a different recipe and Second Draft re-runs your text against it. No re-copying, no closing the panel.</li><li>## Set your default</li><li>Star the recipe you use most. That one opens automatically when you bring up the panel.</li><li>## Your old setup carries over</li><li>If you'd already customized your suggestions, they're now a recipe — same settings, new home. No setup needed on your end.</li></ul>
+                <h2>What's New in 1.11</h2><ul><li># Version 1.11</li><li>A fresh look — and dark mode that finally looks right everywhere.</li><li>## A cleaner, calmer design</li><li>Second Draft has a new monochrome "carbon and platinum" palette. The panel, settings, and onboarding all feel more focused — less color noise, more attention on your words.</li><li>## Dark mode, done right</li><li>Dark mode used to be patchy, with a few cards and surfaces stuck looking light. Now every screen adapts properly, so Second Draft looks at home whether your Mac is in light or dark.</li><li>## A few sharper details</li><li>Refined recipe badges, clearer selected states, and better contrast throughout so everything's easy to read.</li></ul>
             ]]></description>
             <enclosure
-                url="https://github.com/set311/seconddraft-releases/releases/download/v1.10/SecondDraft-1.10.dmg"
-                sparkle:edSignature="ZqO8QfeaAYtrQWBW4zzrxKBX2sBI/pzqtlu5Dm50kVs6hq0UkHe31EDexs3qniVFUn37JOYp+Lp3m4Xu3LUeDw=="
-                length="2866484"
+                url="https://github.com/set311/seconddraft-releases/releases/download/v1.11/SecondDraft-1.11.dmg"
+                sparkle:edSignature="V6YrgtyGCFhsmVQeQFfJ8bu26VSVP7/gVjKemBtggeYnuLx9r5vvNArKEUN/KqR/FnuEkz16WprFnYzWcxdYDQ=="
+                length="2923711"
                 type="application/octet-stream"/>
         </item>
     </channel>
